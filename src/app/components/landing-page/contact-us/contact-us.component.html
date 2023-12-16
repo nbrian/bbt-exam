@@ -1,0 +1,21 @@
+<article class="contact-us">
+    <section class="blue">
+        <h2>Contact us today</h2>
+        <p>Brief intro paragraph about this section. Bis porepelent quam nam ut raeptam facillo riberum sitatur aut proreperiata volorer.</p>
+        <app-contact-us-form></app-contact-us-form>
+    </section>
+    <section>
+        <h2>Contact us</h2>
+        <mat-divider></mat-divider>
+        <mat-list>
+            @for(item of contactUsLinks; track item) {
+                <mat-list-item>
+                    <span class="contact-items">
+                        <mat-icon>{{item.icon}}</mat-icon>
+                        {{item.value}}
+                    </span>
+                </mat-list-item>
+            }
+        </mat-list>
+    </section>
+</article>

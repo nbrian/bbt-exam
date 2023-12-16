@@ -1,0 +1,16 @@
+.contact-us {
+    section {
+        .mat-mdc-list-item {
+            padding: 0;
+            .contact-items {
+                display: flex;
+                .mat-icon {
+                    padding-right: 20px;
+                }
+            }
+        }
+    }
+    section.blue {
+        text-align: center;
+    }
+}

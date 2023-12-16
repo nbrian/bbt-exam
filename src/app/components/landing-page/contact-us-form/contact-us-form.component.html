@@ -1,0 +1,48 @@
+<form [formGroup]="contactUsForm" class="contactUsForm" (ngSubmit)="onSubmit()">
+    <div>
+        <mat-form-field>
+            <mat-label>Full name</mat-label>
+            <input matInput formControlName="fullname" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email" required>
+        </mat-form-field>
+        <mat-form-field >
+            <mat-label>Contact number</mat-label>
+            <input matInput type="tel" formControlName="contact">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Book a meeting</mat-label>
+            <mat-select formControlName="meeting">
+              @for (meeting of meetingType; track meeting) {
+                <mat-option [value]="meeting">{{meeting}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        <mat-form-field>
+            <mat-label>Preferred day</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="day" required>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Preferred time</mat-label>
+            <input matInput type="time" formControlName="time" required>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Message</mat-label>
+            <textarea matInput formControlName="message"></textarea>
+        </mat-form-field>
+    </div>
+    <div class="submit-button-container">
+        <button mat-stroked-button type="submit">Submit</button>
+    </div>
+</form>
