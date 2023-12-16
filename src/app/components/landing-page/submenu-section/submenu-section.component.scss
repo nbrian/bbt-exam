@@ -1,0 +1,18 @@
+article.subcontent {
+    width: 100%;
+    section {
+        max-height: 540px;
+        aspect-ratio: 2/1;
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        &:not(.blue) {
+            padding: 0;
+        }
+    }
+    section.blue {
+        aspect-ratio: 1/2;
+    }
+}
