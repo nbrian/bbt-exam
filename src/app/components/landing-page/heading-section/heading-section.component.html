@@ -1,0 +1,23 @@
+<article class="headings">
+    <section class="blue">
+        <img class="logo" src="assets/images/logo.png" alt="Placeholder"/>
+        <div>
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <h2>consectetur adipiscing elit, sed do eius mod tempor incididunt ut labore et dolo re magna aliqua onsectetur adipiscing elit, sed do eius mod tempor incid.</h2>
+        </div>
+    </section>
+    <section>
+        <h2>News & blog</h2>
+        <mat-divider></mat-divider>
+        <mat-list>
+            @for(item of listItem; track item){
+                <mat-list-item>
+                    <span class="newsBlog">
+                        {{item}}
+                        <mat-icon>arrow_right</mat-icon>
+                    </span>
+                </mat-list-item>
+            }
+        </mat-list>
+    </section>
+</article>
