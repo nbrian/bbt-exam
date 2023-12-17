@@ -1,0 +1,47 @@
+$blue: #1EC5EA;
+$white: #F5F5F5;
+$text-black:#595A5A;
+// Material components overrides
+//Button, Input
+button, .mdc-button, .mat-mdc-outlined-button, .mat-mdc-text-field-wrapper {
+    border-radius: 0 !important;
+    color: $blue !important;
+}
+button.blue {
+    color: $white !important;
+    background-color: $blue !important;
+}
+.stroked-button {
+    background-color: transparent !important;
+    border-color: $white !important;
+    color: $white !important;
+}
+
+// Input, select, textarea
+.mat-mdc-text-field-wrapper {
+    background-color: transparent !important;
+    border: 2px solid $white !important;
+    // Select
+    .mdc-floating-label, .mat-mdc-select-value-text, .mat-mdc-select-arrow, input {
+        color: $white !important;
+    }
+    .mdc-icon-button {
+        background-color: transparent !important;
+        .mat-icon {
+            color: $white !important;
+        }
+    }
+    // remove underline ripple effect
+    .mdc-line-ripple {
+        display: none !important;
+    }
+}
+
+// Tabs
+.mat-mdc-tab .mdc-tab-indicator__content--underline{
+    display: none !important;
+ }
+ .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
+    color: $blue !important;
+    font-weight: bolder !important;
+ }
