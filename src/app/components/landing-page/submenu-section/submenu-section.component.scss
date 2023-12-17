@@ -1,8 +1,9 @@
 article.subcontent {
     width: 100%;
+    overflow: hidden;
     section {
-        max-height: 540px;
-        aspect-ratio: 2/1;
+        flex:3;
+        background-color: #1EC5EA;
         img {
             object-fit: cover;
             width: 100%;
@@ -13,6 +14,9 @@ article.subcontent {
         }
     }
     section.blue {
-        aspect-ratio: 1/2;
+        flex:1;
+        button {
+            font-weight: 200;
+        }
     }
 }

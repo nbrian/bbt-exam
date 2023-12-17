@@ -1,6 +1,6 @@
-<mat-tab-group selectedIndex="2">
+<mat-tab-group selectedIndex="2" dynamicheight>
     @for (tab of submenu; track tab) {
-      <mat-tab [label]="tab">
+      <mat-tab class="no-ink-bar" [label]="tab">
             <article class="subcontent">
                 <section>
                     <img src="assets/images/adviser.png" alt="adviser"/>
@@ -10,7 +10,7 @@
                     </h2>
                     <p>Haven was created out of the need to simply do things better. With specialist advisers across a range of financial services, we will offer you the best, practical advice for your unique situation.</p>
                     <p>Our financial advisers span the north and south island making us conveniently positioned wherever you need us.</p>
-                    <button mat-stroked-button class="app-btn">Learn more about our advisers <mat-icon iconPositionEnd>send</mat-icon></button>
+                    <button mat-stroked-button class="stroked-button">Learn more about our advisers <mat-icon iconPositionEnd>send</mat-icon></button>
                 </section>
             </article>
         </mat-tab>
