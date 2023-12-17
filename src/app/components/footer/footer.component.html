@@ -1,0 +1,36 @@
+<footer>
+        <form [formGroup]="newsletterForm" class="newsletterForm" (ngSubmit)="onSubmit()">
+            <mat-label class="signup">SIGNUP TO OUR NEWSLETTER</mat-label>
+            <mat-form-field subscriptSizing="dynamic">
+                <mat-label>Full name</mat-label>
+                <input matInput formControlName="fullname" required>
+            </mat-form-field>
+            <mat-form-field subscriptSizing="dynamic">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="email" required>
+            </mat-form-field>
+        
+            <button mat-flat-button type="submit">Submit</button>
+            
+        </form>
+    <mat-divider></mat-divider>
+    <div>
+        <img src="assets/images/logo-footer.png" alt="logo"/>
+    </div>
+    <mat-list>
+        <mat-list-item>HOME</mat-list-item>
+        <mat-list-item>OUR SERVICES</mat-list-item>
+        <mat-list-item>ABOUT US</mat-list-item>
+        <mat-list-item>TESTIMONIALS</mat-list-item>
+        <mat-list-item>BLOG</mat-list-item>
+        <mat-list-item>CONTACT US</mat-list-item>
+    </mat-list>
+    <div class="contacts">
+        <span>0800 700 699</span>
+        <span>reception&#64;havenadvisers.nz</span>
+    </div>
+    <mat-divider class="bottom-divider"></mat-divider>
+    <span class="copyright">
+        Copyright © 2017 Haven Advisers Limited. All rights reserved.
+    </span>
+</footer>
