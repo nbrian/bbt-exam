@@ -9,6 +9,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MyErrorStateMatcher } from '../../../helper/form-helper';
 
 @Component({
   selector: 'app-contact-us-form',
@@ -32,6 +33,8 @@ export class ContactUsFormComponent {
   @Input() email!: string;
   @Input() contact!: number;
 
+  matcher = new MyErrorStateMatcher();
+  submitted = false;
 
   contactUsForm: FormGroup  = this.formBuilder.group({
     fullname: ['', Validators.required],
@@ -52,10 +55,22 @@ export class ContactUsFormComponent {
       fullname: this.fullname, 
       email: this.email, 
       contact: this.contact, 
-    })
+    });
+    this.contactUsForm.valueChanges.subscribe(() => this.submitted = false);
+  }
+
+  get form() {
+    return this.contactUsForm.controls;
   }
 
   onSubmit() {
-    console.log(this.contactUsForm.value);
+    this.submitted = true;
+    
+    if (this.contactUsForm.invalid) {
+      for (const control of Object.keys(this.form)) {
+        this.form[control].markAsTouched();
+      }
+      return;
+    }
   }
 }

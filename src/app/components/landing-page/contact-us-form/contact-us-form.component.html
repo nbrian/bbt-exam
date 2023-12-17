@@ -2,15 +2,27 @@
     <div>
         <mat-form-field>
             <mat-label>Full name</mat-label>
-            <input matInput formControlName="fullname" required>
+            <input matInput formControlName="fullname" [errorStateMatcher]="matcher" required>
+            @if (submitted && form['fullname'].hasError('required')) {
+                <mat-error>Full name is required</mat-error>
+            }
         </mat-form-field>
         <mat-form-field>
             <mat-label>Email</mat-label>
-            <input matInput type="email" formControlName="email" required>
+            <input matInput type="email" formControlName="email" [errorStateMatcher]="matcher" required>
+            @if (submitted && form['email'].hasError('email') && !form['email'].hasError('required')) {
+                <mat-error>Please enter a valid email</mat-error>
+            }
+            @if (submitted && form['email'].hasError('required')) {
+                <mat-error>Email is required</mat-error>
+            }
         </mat-form-field>
         <mat-form-field >
             <mat-label>Contact number</mat-label>
-            <input matInput type="tel" formControlName="contact">
+            <input matInput type="number" inputmode="numeric" formControlName="contact" [errorStateMatcher]="matcher">
+            @if (submitted && form['contact'].hasError('pattern') && !form['contact'].hasError('required')) {
+                <mat-error>Please enter a valid contact number</mat-error>
+            }
         </mat-form-field>
     </div>
     <div>
@@ -24,16 +36,22 @@
           </mat-form-field>
         <mat-form-field>
             <mat-label>Preferred day</mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="day" required>
+            <input matInput [matDatepicker]="picker" formControlName="day" [errorStateMatcher]="matcher" required>
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker">
               <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
             </mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
+            @if (submitted && form['day'].hasError('required')) {
+                <mat-error>Preferred day is required</mat-error>
+            }
         </mat-form-field>
         <mat-form-field>
             <mat-label>Preferred time</mat-label>
-            <input matInput type="time" formControlName="time" required>
+            <input matInput type="time" formControlName="time" [errorStateMatcher]="matcher" required>
+            @if (submitted && form['time'].hasError('required')) {
+                <mat-error>Preferred time is required</mat-error>
+            }
         </mat-form-field>
     </div>
     <div>
