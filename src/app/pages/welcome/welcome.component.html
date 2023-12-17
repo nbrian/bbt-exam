@@ -1,0 +1,15 @@
+<div class="container">
+    <mat-card class="welcomeCard">
+        <h1>Welcome <span *ngIf="user && user.fullname">, {{user.fullname}}</span></h1> 
+        <h3 *ngIf="users.length > 0">List of users</h3>
+        <mat-list>
+            @for(u of users; track u) {
+                <mat-list-item>
+                    <span matListItemTitle>{{u.fullname}}</span>
+                    <span matListItemLine>{{u.email}}</span>
+                </mat-list-item>
+            }
+        </mat-list>
+        <button mat-raised-button (click)="goToLandingPage()">Go to Haven Website <mat-icon iconPositionEnd>arrow_right</mat-icon></button>
+    </mat-card>
+</div>
