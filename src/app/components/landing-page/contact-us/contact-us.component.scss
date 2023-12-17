@@ -1,5 +1,6 @@
 .contact-us {
     section {
+        flex: 1;
         .mat-mdc-list-item {
             padding: 0;
             .contact-items {
@@ -11,6 +12,7 @@
         }
     }
     section.blue {
+        flex: unset;
         text-align: center;
     }
 }
