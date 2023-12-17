@@ -1,7 +1,9 @@
 <div class="container">
     <mat-card class="welcomeCard">
         <h1>Welcome <span *ngIf="user && user.fullname">, {{user.fullname}}</span></h1> 
-        <h3 *ngIf="users.length > 0">List of users</h3>
+        @if(users.length > 0) {
+            <h3>List of users</h3>
+        }
         <mat-list>
             @for(u of users; track u) {
                 <mat-list-item>
