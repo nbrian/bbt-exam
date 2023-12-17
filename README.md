@@ -1,27 +1,58 @@
 # BbtExam
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
 
-## Development server
+## Description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This application have 3 routes to navigate to.
+- `/registration` - page with form validation, clearing and submitting
+- `/welcome` - page consuming data from the registration page
+- `/haven` - page to demonstrate a landing page with responsive design
 
-## Code scaffolding
+## Project structure
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Under `src`, main folder contains:
+- app - main application folder
+        - components - dumb components used throughout the app
+        - helper - utilities functions
+        - interfaces
+        - pages - main pages components
+        - services
+- assets - includes images
+- styles - additional global styles 
 
-## Build
+## Libraries
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+These are the main libraries used by this application
+- Angular CLI - tool to develop angular applications
+- Angular Material - material design system from google
+- In Memory Web Api - for mocking api calls
+- Karma - for testing
 
-## Running unit tests
+## How to use this application
+- open terminal
+- install dependencies
+```bash
+    npm install
+```
+- run application
+```bash
+    npm run start
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## To run test
+- open terminal
+- run test script
+```bash
+    npm run test
+```
 
-## Running end-to-end tests
+## Future upgrades
+- Actual API calls
+    - Temporarily using in memory Web API for API calls
+- Using Material Theming
+    - Right now the app styling used is overriding material design
+- Additional testing
+    - additional test cases
+    - integration tests
+    - E2E test using cypress
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
