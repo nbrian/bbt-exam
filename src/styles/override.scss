@@ -22,7 +22,7 @@ button.blue {
     background-color: transparent !important;
     border: 2px solid $white !important;
     // Select
-    .mdc-floating-label, .mat-mdc-select-value-text, .mat-mdc-select-arrow, input {
+    .mdc-floating-label, .mat-mdc-select-value-text, .mat-mdc-select-arrow, input, textarea {
         color: $white !important;
     }
     .mdc-icon-button {
