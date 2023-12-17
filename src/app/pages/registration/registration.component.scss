@@ -1,0 +1,45 @@
+$blue: #1EC5EA;
+$white: #F5F5F5;
+$text-black:#595A5A;
+
+.container {
+    width: 100%;
+    // height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: $white;
+}
+.registrationCard {
+    background-color: $blue;
+    width: 500px;
+    padding: 50px;
+    margin: 50px;
+    h1 {
+        color: #fff;
+        text-align: center;
+    }
+    form > *{
+        width: 100%;
+    }
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .registrationCard {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px            
+        }
+        button {
+            width: 100%;
+        }
+    }
+}
